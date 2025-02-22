@@ -1,7 +1,7 @@
 apps:
   replicas: 4
   env: dev
-  image: harshsoni777/admin-ui:v1
+  image: harshsoni777/admin-ui:v98
   name: admin-ui
   computers:
     requests:
