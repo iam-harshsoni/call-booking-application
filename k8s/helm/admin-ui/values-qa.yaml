@@ -1,7 +1,7 @@
 apps:
   replicas: 3
   env: qa
-  image: harshsoni777/admin-ui:v98
+  image: harshsoni777/admin-ui:9
   name: admin-ui
   computers:
     requests:
