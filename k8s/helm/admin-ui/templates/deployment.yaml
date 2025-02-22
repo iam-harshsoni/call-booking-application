@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.apps.name }}-{{ .Release.Name }}
+  namespace: {{ include "ui-namespace" . }}
+  labels:
+    {{- include "ui-labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.apps.replicas }}
+  selector:
+    matchLabels:
+      app: admin-ui
+  template:
+    metadata:
+      labels:
+       {{- include "ui-labels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: admin-ui
+        image: {{ .Values.apps.image }}
+        resources:
+         {{- toYaml .Values.apps.computers | nindent 10 }}
+        ports:
+        - containerPort: {{ .Values.apps.containerPort }}
+        volumeMounts:
+        - name:  {{ .Values.volume.name }}
+          mountPath:  /app/.env
+          subPath: .env
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health 
+        #     port: 3000
+        #   initialDelaySeconds: 90
+        #   timeoutSeconds: 10
+        # readinessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 3000
+        #   initialDelaySeconds: 30
+        #   timeoutSeconds: 10
+      volumes:
+      - name:  {{ .Values.volume.name }}
+        configMap:
+          name: {{ include "ui-cm-name" . }}
