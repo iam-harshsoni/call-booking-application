@@ -2,7 +2,7 @@ apps:
   replicas: 3
   env: qa
   name: admin-api
-  image: harshsoni777/admin-api:9
+  image: harshsoni777/admin-api:v1
   computers:
     requests:
       cpu: "300m"

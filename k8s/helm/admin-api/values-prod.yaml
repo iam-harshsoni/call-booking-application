@@ -2,7 +2,7 @@ apps:
   replicas: 4
   env: prod
   name: admin-api
-  image: harshsoni777/admin-api:9
+  image: harshsoni777/admin-api:v1
   computers:
     requests:
       cpu: "500m"

@@ -1,13 +1,13 @@
-{{- define "ui-labels" -}}
+{{- define "admin.ui-labels" -}}
 app: admin-ui
 module: admin
 env: {{ .Values.apps.env }}
 {{- end -}}
 
-{{- define "ui-namespace" -}}
+{{- define "admin.ui.namespace" -}}
 admin
 {{- end -}}
 
-{{- define "ui-cm-name" -}}
+{{- define "admin.ui.cm.name" -}}
 admin-ui-cm-{{ .Release.Name }}
 {{- end -}}

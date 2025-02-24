@@ -9,7 +9,7 @@ apps:
     limits:
       cpu: "500m"
       memory: "2Gi"
-  image: harshsoni777/user-ui:9
+  image: harshsoni777/user-ui:v1
   containerPort: 3000
 
 hpa:

@@ -1,7 +1,7 @@
 apps:
   replicas: 3
   env: qa
-  image: harshsoni777/user-api:9
+  image: harshsoni777/user-api:v1
   name: user-api
   computers:  
     requests:
