@@ -26,7 +26,7 @@ admin_api:
     replicas: 4
     env: prod
     name: admin-api
-    image: harshsoni777/admin-api:v1
+    image: harshsoni777/admin-api:v20
     computers:
       requests:
         cpu: "500m"
@@ -48,7 +48,7 @@ user_api:
   apps:
     replicas: 4
     env: prod
-    image: harshsoni777/user-api:v1
+    image: harshsoni777/user-api:v20
     name: user-api
     computers:
       requests:
@@ -78,7 +78,7 @@ admin_ui:
   apps:
     replicas: 4
     env: dev
-    image: harshsoni777/admin-ui:v1
+    image: harshsoni777/admin-ui:v20
     name: admin-ui
     computers:
       requests:
@@ -113,7 +113,7 @@ user_ui:
       limits:
         cpu: "1000m"
         memory: "8Gi"
-    image: harshsoni777/user-ui:v1
+    image: harshsoni777/user-ui:v20
     containerPort: 3000
 
   hpa:
